@@ -1,0 +1,17 @@
+[Desktop Entry]
+Categories=Documentation;System;
+Comment=
+Exec=xdg-open file:///usr/share/doc/HTML/fedora-release-notes/index.html
+GenericName=Release Notes
+Icon=fedora-release-notes
+Name=Release Notes
+NoDisplay=false
+OnlyShowIn=KDE;
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-StartupNotify=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=

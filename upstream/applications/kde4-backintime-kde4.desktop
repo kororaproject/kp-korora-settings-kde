@@ -1,0 +1,17 @@
+[Desktop Entry]
+Categories=Qt;KDE;System;
+Comment=Simple backup system
+Exec=backintime-kde4
+GenericName=Backup Tool
+Icon=document-save
+Name=Back In Time
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-Desktop-File-Install-Version=0.16
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+X-MultipleArgs=false

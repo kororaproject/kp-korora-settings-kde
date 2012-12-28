@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=System;Settings;X-Red-Hat-Base;
+Comment=Configure which services will be running when the system starts
+Encoding=UTF-8
+Exec=/usr/bin/system-config-services
+GenericName[en_GB]=Service Management
+GenericName=Service Management
+Icon=applications-system
+Name[en_GB]=Services
+Name=Services
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-Desktop-File-Install-Version=0.16
+X-KDE-SubstituteUID=false
+X-KDE-Username=

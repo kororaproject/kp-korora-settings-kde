@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=Network;
+Comment=
+Exec=choqok %i -caption "%c"
+GenericName=Micro-blogging Client
+Icon=choqok
+Name[en_GB]=Choqok
+Name=Choqok
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-DBUS-StartupType=Unique
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+X-Ubuntu-Gettext-Domain=desktop_kdesdk

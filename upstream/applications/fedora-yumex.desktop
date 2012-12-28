@@ -1,0 +1,17 @@
+[Desktop Entry]
+Categories=Application;System;X-Red-Hat-Base;X-Fedora;
+Comment=GUI front end for Yum
+Encoding=UTF-8
+Exec=/usr/bin/yumex
+GenericName=Yum Graphical Frontend
+Icon=/usr/share/pixmaps/yumex/yumex-icon.png
+Name=Yum Extender
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-Desktop-File-Install-Version=0.16
+X-KDE-SubstituteUID=false
+X-KDE-Username=

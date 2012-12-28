@@ -1,0 +1,17 @@
+[Desktop Entry]
+Categories=System;TerminalEmulator;
+Comment=standard terminal emulator for the X window system
+Encoding=UTF-8
+Exec=xterm
+GenericName=Terminal
+Icon=utilities-terminal
+Name=XTerm
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-Desktop-File-Install-Version=0.16
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,17 @@
+[Desktop Entry]
+Categories=X-Red-Hat-Base;Settings;System;
+Comment=Change the default system language
+Exec=/usr/bin/system-config-language
+GenericName=
+Icon=preferences-desktop-locale
+Name[en_GB]=Language
+Name=Language
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-Desktop-File-Install-Version=0.16
+X-KDE-SubstituteUID=false
+X-KDE-Username=

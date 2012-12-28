@@ -1,0 +1,16 @@
+[Desktop Entry]
+Categories=Qt;KDE;Graphics;Photography;
+Comment=Create beautiful and professional photo layouts from your photos
+Exec=photolayoutseditor
+GenericName=Photo Layouts Management Program
+Icon=photolayoutseditor
+Name=Photo Layouts Editor
+NoDisplay=false
+OnlyShowIn=
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,21 @@
+[Desktop Entry]
+Categories=KDE;Qt;AudioVideo;DiscBurning;System;Filesystem;
+Comment=Disc writing program
+Exec=k3b %U
+GenericName=Disc Burner
+Icon=k3b
+MimeType=application/x-k3b;application/x-iso;application/x-cd-image;application/x-cue;
+Name[en_GB]=K3b
+Name=K3b
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceType=Unique
+X-DocPath=k3b/index.html
+X-KDE-NativeMimeType=application/x-k3b;
+X-KDE-StartupNotify=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=

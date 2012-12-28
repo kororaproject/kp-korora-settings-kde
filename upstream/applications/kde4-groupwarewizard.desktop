@@ -1,0 +1,17 @@
+[Desktop Entry]
+Categories=Qt;KDE;Utility;X-KDE-Utilities-PIM;
+Comment=
+Exec=groupwarewizard
+GenericName=Groupware Wizard
+Icon=kontact
+Name[en_GB]=KDE Groupware Wizard
+Name=KDE Groupware Wizard
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-StartupNotify=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=

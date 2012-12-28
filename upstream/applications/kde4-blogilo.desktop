@@ -1,0 +1,16 @@
+[Desktop Entry]
+Categories=Qt;KDE;Network;
+Comment=
+Exec=blogilo %i -caption "%c"
+GenericName=Blogging Client
+Icon=blogilo
+Name[en_GB]=Blogilo
+Name=Blogilo
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,17 @@
+[Desktop Entry]
+Categories=Office;X-Red-Hat-Base;X-SuSE-Core-Office;
+Comment=
+Exec=libreoffice-printeradmin
+GenericName=Office Suite Printer Administration
+Icon=libreoffice-printeradmin
+Name[en_GB]=LibreOffice 3.3 Printer Administration
+Name=LibreOffice 3.3 Printer Administration
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+Version=1.0
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=System;Utility;X-Red-Hat-Base;X-Fedora;GNOME;GTK;
+Comment=Install the live CD to your hard disk
+Encoding=UTF-8
+Exec=/usr/bin/liveinst
+GenericName=
+Icon=anaconda
+Name[en_GB]=Install to Hard Drive
+Name=Install to Hard Drive
+NoDisplay=true
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-Desktop-File-Install-Version=0.16
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,26 @@
+[Desktop Entry]
+Categories=Qt;Graphics;Publishing;
+Comment=Page Layout and Publication
+Exec=scribus %f
+GenericName=Page Layout
+Icon=scribus
+MimeType=application/vnd.scribus;
+Name=Scribus
+NoDisplay=false
+Path[$e]=
+StartupNotify=false
+StartupWMClass=scribus
+Terminal=0
+TerminalOptions=
+TryExec=scribus
+Type=Application
+X-AppInstall-Package=scribus
+X-AppInstall-Section=main
+X-Desktop-File-Install-Version=0.16
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+
+[X-Property::X-KDE-NativeExtension]
+DocPath=scribus
+Type=QString
+Value=.sla

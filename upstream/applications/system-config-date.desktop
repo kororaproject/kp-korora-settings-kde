@@ -1,0 +1,16 @@
+[Desktop Entry]
+Categories=System;Settings;X-Red-Hat-Base;
+Comment=Change system date and time
+Exec=/usr/bin/system-config-date
+Icon=clock
+Name[en_GB]=Date & Time
+Name=Date & Time
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-Desktop-File-Install-Version=0.16
+X-KDE-SubstituteUID=false
+X-KDE-Username=

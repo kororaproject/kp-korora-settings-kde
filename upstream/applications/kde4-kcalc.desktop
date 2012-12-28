@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=Qt;KDE;Utility;X-KDE-Utilities-Desktop;
+Comment=
+Exec=kcalc -caption "%c"
+GenericName=Calculator
+Icon=accessories-calculator
+Name[en_GB]=KCalc
+Name=KCalc
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-DocPath=kcalc/index.html
+X-KDE-StartupNotify=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=
