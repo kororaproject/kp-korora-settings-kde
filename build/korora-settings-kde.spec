@@ -1,15 +1,15 @@
-Summary:  Korora configs for KDE
-Name:   korora-settings-kde
-Version:  0.5
-Release:  1%{?dist}
+Summary:	Korora configs for KDE
+Name:		korora-settings-kde
+Version:	0.6
+Release:	1%{?dist}
 
-Group:    System Environment/Base
-License:  GPLv3+
-Url:    http://korora.org
-Source0:  %{name}-%{version}.tar.gz
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires:  desktop-file-utils
-Requires: coreutils sed util-linux redhat-menus
+Group:		System Environment/Base
+License:	GPLv3+
+Url:		http://kororaproject.org
+Source0:	%{name}-%{version}.tar.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildRequires:	desktop-file-utils
+Requires:	coreutils sed util-linux redhat-menus
 
 %description
 %{summary}.
@@ -75,6 +75,9 @@ ln -sf prefs-kde.js prefs.js
 /etc/skel/Desktop/Help-kde.desktop
 
 %changelog
+* Thu Oct 25 2012 Chris Smart <chris@kororaa.org> 0.6-1
+- Build for Korora 18 release.
+
 * Mon May 21 2012 Chris Smart <chris@kororaa.org> 0.5-1
 - Update for Kororaa 17, remove workaround for kdenlive.
 

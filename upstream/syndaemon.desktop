@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment[en_GB]=
 Comment=
-Exec=syndaemon -i 0.25 -K -R
+Exec=syndaemon -d -i 0.25
 GenericName[en_GB]=
 GenericName=
 Icon=system-run
