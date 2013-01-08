@@ -1,21 +1,21 @@
-Summary:	Korora configs for KDE
-Name:		korora-settings-kde
-Version:	0.6
-Release:	1%{?dist}
+Summary:        Korora configs for KDE
+Name:           korora-settings-kde
+Version:        0.6
+Release:        1%{?dist}
 
-Group:		System Environment/Base
-License:	GPLv3+
-Url:		http://kororaproject.org
-Source0:	%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires:	desktop-file-utils
-Requires:	coreutils sed util-linux redhat-menus
+Group:          System Environment/Base
+License:        GPLv3+
+Url:            http://kororaproject.org
+Source0:        %{name}-%{version}.tar.gz
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildRequires:  desktop-file-utils
+Requires:       coreutils sed util-linux redhat-menus
 
 %description
 %{summary}.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 
