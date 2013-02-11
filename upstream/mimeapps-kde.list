@@ -102,6 +102,7 @@ video/quicktime=vlc.desktop;
 video/vivo=vlc.desktop;
 video/vnd.divx=vlc.desktop;
 video/vnd.vivo=vlc.desktop;
+video/webm=vlc.desktop;
 video/x-anim=vlc.desktop;
 video/x-avi=vlc.desktop;
 video/x-flc=vlc.desktop;
