@@ -1,7 +1,7 @@
 Summary:        Korora configs for KDE
 Name:           korora-settings-kde
 Version:        0.6
-Release:        1%{?dist}.2
+Release:        2%{?dist}
 
 Group:          System Environment/Base
 License:        GPLv3+
@@ -33,7 +33,7 @@ mkdir -p %{buildroot}%{_libdir}/firefox/defaults/profile
 desktop-file-install --dir=${RPM_BUILD_ROOT}%{_sysconfdir}/skel/.config/autostart/ syndaemon.desktop
 install -m 0644 %{_builddir}/%{name}-%{version}/applications/* %{buildroot}/usr/local/share/applications/
 cp -a %{_builddir}/%{name}-%{version}/mimeapps-kde.list %{buildroot}%{_datadir}/applications/
-install -m 0644 %{_builddir}/%{name}-%{version}/applications-korora.menu %{buildroot}%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
+#install -m 0644 %{_builddir}/%{name}-%{version}/applications-korora.menu %{buildroot}%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
 cp -a %{_builddir}/%{name}-%{version}/prefs-kde.js %{buildroot}%{_libdir}/firefox/defaults/profile/prefs-kde.js
 
 #fix KDE logon issue
@@ -67,7 +67,7 @@ ln -sf prefs-kde.js prefs.js
 %defattr(-,root,root,-)
 %{_datadir}/applications/mimeapps-kde.list
 %{_libdir}/firefox/defaults/profile/prefs-kde.js
-%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
+#%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
 %{_sysconfdir}/skel/.config/autostart/syndaemon.desktop
 %{_sysconfdir}/skel/.local/share/user-places.xbel
 #%{_sysconfdir}/skel/.kde/share/config/kdenliverc
@@ -75,6 +75,9 @@ ln -sf prefs-kde.js prefs.js
 /etc/skel/Desktop/Help-kde.desktop
 
 %changelog
+* Wed May 29 2013 Chris Smart <chris@kororaa.org> 0.6-2
+- Build for Korora 19 release, remove application menu as items are sorted by category by default now.
+
 * Thu Oct 25 2012 Chris Smart <chris@kororaa.org> 0.6-1
 - Build for Korora 18 release.
 
