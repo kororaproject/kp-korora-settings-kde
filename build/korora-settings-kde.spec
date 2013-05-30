@@ -1,7 +1,7 @@
 Summary:        Korora configs for KDE
 Name:           korora-settings-kde
 Version:        0.6
-Release:        2%{?dist}
+Release:        2%{?dist}.1
 
 Group:          System Environment/Base
 License:        GPLv3+
@@ -28,13 +28,13 @@ mkdir -p %{buildroot}%{_sysconfdir}/skel/.kde/share/config
 mkdir -p %{buildroot}%{_sysconfdir}/skel/.local/share
 mkdir -p %{buildroot}/usr/local/share/applications
 mkdir -p %{buildroot}%{_sysconfdir}/xdg/menus/applications-merged
-mkdir -p %{buildroot}%{_libdir}/firefox/defaults/profile
+mkdir -p %{buildroot}%{_libdir}/firefox/browser/defaults/profile
 
 desktop-file-install --dir=${RPM_BUILD_ROOT}%{_sysconfdir}/skel/.config/autostart/ syndaemon.desktop
 install -m 0644 %{_builddir}/%{name}-%{version}/applications/* %{buildroot}/usr/local/share/applications/
 cp -a %{_builddir}/%{name}-%{version}/mimeapps-kde.list %{buildroot}%{_datadir}/applications/
 #install -m 0644 %{_builddir}/%{name}-%{version}/applications-korora.menu %{buildroot}%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
-cp -a %{_builddir}/%{name}-%{version}/prefs-kde.js %{buildroot}%{_libdir}/firefox/defaults/profile/prefs-kde.js
+cp -a %{_builddir}/%{name}-%{version}/prefs-kde.js %{buildroot}%{_libdir}/firefox/browser/defaults/profile/prefs-kde.js
 
 #fix KDE logon issue
 touch %{buildroot}%{_sysconfdir}/skel/.local/share/user-places.xbel
@@ -57,7 +57,7 @@ rm -rf %{buildroot}
 %post
 cd %{_datadir}/applications/
 ln -sf mimeapps-kde.list mimeapps.list
-cd %{_libdir}/firefox/defaults/profile/
+cd %{_libdir}/firefox/browser/defaults/profile/
 ln -sf prefs-kde.js prefs.js
 
 #enable GNOME's PackageKit programs in KDE
@@ -66,7 +66,7 @@ ln -sf prefs-kde.js prefs.js
 %files 
 %defattr(-,root,root,-)
 %{_datadir}/applications/mimeapps-kde.list
-%{_libdir}/firefox/defaults/profile/prefs-kde.js
+%{_libdir}/firefox/browser/defaults/profile/prefs-kde.js
 #%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
 %{_sysconfdir}/skel/.config/autostart/syndaemon.desktop
 %{_sysconfdir}/skel/.local/share/user-places.xbel
