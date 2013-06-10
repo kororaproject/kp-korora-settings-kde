@@ -1,7 +1,7 @@
 Summary:        Korora configs for KDE
 Name:           korora-settings-kde
-Version:        0.6
-Release:        2%{?dist}.1
+Version:        0.7
+Release:        1%{?dist}
 
 Group:          System Environment/Base
 License:        GPLv3+
@@ -22,17 +22,18 @@ Requires:       coreutils sed util-linux redhat-menus
 %install
 rm -rf %{buildroot}
 
-mkdir -p %{buildroot}%{_datadir}/applications/
-mkdir -p %{buildroot}%{_sysconfdir}/skel/Desktop
-mkdir -p %{buildroot}%{_sysconfdir}/skel/.kde/share/config
+#mkdir -p %{buildroot}%{_datadir}/applications/
+#mkdir -p %{buildroot}%{_sysconfdir}/skel/Desktop
+#mkdir -p %{buildroot}%{_sysconfdir}/skel/.kde/share/config
 mkdir -p %{buildroot}%{_sysconfdir}/skel/.local/share
-mkdir -p %{buildroot}/usr/local/share/applications
-mkdir -p %{buildroot}%{_sysconfdir}/xdg/menus/applications-merged
+mkdir -p %{buildroot}%{_sysconfdir}/skel/.config/autostart
+#mkdir -p %{buildroot}/usr/local/share/applications
+#mkdir -p %{buildroot}%{_sysconfdir}/xdg/menus/applications-merged
 mkdir -p %{buildroot}%{_libdir}/firefox/browser/defaults/profile
 
 desktop-file-install --dir=${RPM_BUILD_ROOT}%{_sysconfdir}/skel/.config/autostart/ syndaemon.desktop
-install -m 0644 %{_builddir}/%{name}-%{version}/applications/* %{buildroot}/usr/local/share/applications/
-cp -a %{_builddir}/%{name}-%{version}/mimeapps-kde.list %{buildroot}%{_datadir}/applications/
+#install -m 0644 %{_builddir}/%{name}-%{version}/applications/* %{buildroot}/usr/local/share/applications/
+#cp -a %{_builddir}/%{name}-%{version}/mimeapps-kde.list %{buildroot}%{_datadir}/applications/
 #install -m 0644 %{_builddir}/%{name}-%{version}/applications-korora.menu %{buildroot}%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
 cp -a %{_builddir}/%{name}-%{version}/prefs-kde.js %{buildroot}%{_libdir}/firefox/browser/defaults/profile/prefs-kde.js
 
@@ -45,9 +46,9 @@ touch %{buildroot}%{_sysconfdir}/skel/.local/share/user-places.xbel
 #version=0.8
 #EOF
 
-cd %{buildroot}/
-ln -sf /usr/share/applications/kde4/Help.desktop %{buildroot}/etc/skel/Desktop/Help-kde.desktop
-cd -
+#cd %{buildroot}/
+#ln -sf /usr/share/applications/kde4/Help.desktop %{buildroot}/etc/skel/Desktop/Help-kde.desktop
+#cd -
 
 %clean
 rm -rf %{buildroot}
@@ -63,18 +64,33 @@ ln -sf prefs-kde.js prefs.js
 #enable GNOME's PackageKit programs in KDE
 #sed -i s/NotShowIn=KDE/#NotShowIn=KDE/ /usr/share/applications/gpk*desktop 2>/dev/null
 
+%postun
+# clean up the link on uninstall of this package (not updates though)
+if [ "$1" == "0" ]
+then
+  cd %{_libdir}/firefox/browser/defaults/profile/
+  unlink prefs.js 2>/dev/null
+  cd -
+fi
+
+
 %files 
 %defattr(-,root,root,-)
-%{_datadir}/applications/mimeapps-kde.list
+#%{_datadir}/applications/mimeapps-kde.list
 %{_libdir}/firefox/browser/defaults/profile/prefs-kde.js
 #%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
 %{_sysconfdir}/skel/.config/autostart/syndaemon.desktop
 %{_sysconfdir}/skel/.local/share/user-places.xbel
 #%{_sysconfdir}/skel/.kde/share/config/kdenliverc
-/usr/local/share/applications
-/etc/skel/Desktop/Help-kde.desktop
+#/usr/local/share/applications
+#/etc/skel/Desktop/Help-kde.desktop
 
 %changelog
+* Mon Jun 10 2013 Chris Smart <csmart@kororaproject.org> 0.7-1
+- Remove help from desktop, going to be launchable from Korora Welcome,
+clean up firefox prefs.js link on uninstall of package but not upgrades,
+remove mime-apps list, remove old desktop files for overrides.
+
 * Wed May 29 2013 Chris Smart <chris@kororaa.org> 0.6-2
 - Build for Korora 19 release, remove application menu as items are sorted by category by default now.
 
