@@ -1,7 +1,7 @@
 Summary:        Korora configs for KDE
 Name:           korora-settings-kde
 Version:        0.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 
 Group:          System Environment/Base
 License:        GPLv3+
@@ -86,6 +86,9 @@ fi
 #/etc/skel/Desktop/Help-kde.desktop
 
 %changelog
+* Thu Sep 26 2013 Chris Smart <csmart@kororaproject.org> 0.7-2
+- Update Firefox profile to support newer adblock plus
+
 * Mon Jun 10 2013 Chris Smart <csmart@kororaproject.org> 0.7-1
 - Remove help from desktop, going to be launchable from Korora Welcome,
 clean up firefox prefs.js link on uninstall of package but not upgrades,
