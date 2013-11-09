@@ -1,7 +1,7 @@
 Summary:        Korora configs for KDE
 Name:           korora-settings-kde
 Version:        0.8
-Release:        1%{?dist}.1
+Release:        2%{?dist}
 
 Group:          System Environment/Base
 License:        GPLv3+
@@ -33,8 +33,8 @@ mkdir -p %{buildroot}%{_libdir}/firefox/browser/defaults/profile
 mkdir -p %{buildroot}%{_sysconfdir}/kde/{env,shutdown}
 
 desktop-file-install --dir=${RPM_BUILD_ROOT}%{_sysconfdir}/skel/.config/autostart/ syndaemon.desktop
-install -m 0755 %{_builddir}/%{name}-%{version}/gpg-agent-startup.sh %{buildroot}%{_sysconfdir}/kde/env/gpg-agent-shutdown.sh
-install -m 0755 %{_builddir}/%{name}-%{version}/gpg-agent-shutdown.sh %{buildroot}%{_sysconfdir}/kde/shutdown/gpg-agent-shutdown.sh
+#install -m 0755 %{_builddir}/%{name}-%{version}/gpg-agent-startup.sh %{buildroot}%{_sysconfdir}/kde/env/gpg-agent-shutdown.sh
+#install -m 0755 %{_builddir}/%{name}-%{version}/gpg-agent-shutdown.sh %{buildroot}%{_sysconfdir}/kde/shutdown/gpg-agent-shutdown.sh
 #install -m 0644 %{_builddir}/%{name}-%{version}/applications/* %{buildroot}/usr/local/share/applications/
 #cp -a %{_builddir}/%{name}-%{version}/mimeapps-kde.list %{buildroot}%{_datadir}/applications/
 #install -m 0644 %{_builddir}/%{name}-%{version}/applications-korora.menu %{buildroot}%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
@@ -87,10 +87,13 @@ fi
 #%{_sysconfdir}/skel/.kde/share/config/kdenliverc
 #/usr/local/share/applications
 #/etc/skel/Desktop/Help-kde.desktop
-%{_sysconfdir}/kde/env/gpg-agent-shutdown.sh
-%{_sysconfdir}/kde/shutdown/gpg-agent-shutdown.sh
+#%{_sysconfdir}/kde/env/gpg-agent-shutdown.sh
+#%{_sysconfdir}/kde/shutdown/gpg-agent-shutdown.sh
 
 %changelog
+* Thu Oct 24 2013 Chris Smart <csmart@kororaproject.org> 0.8-2
+- Remove gpg-agent from kde profile, now upstream in kde-settings
+
 * Thu Oct 24 2013 Chris Smart <csmart@kororaproject.org> 0.8-1
 - Add gpg-agent to kde profile
 
