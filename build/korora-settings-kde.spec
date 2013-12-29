@@ -1,3 +1,5 @@
+%define  debug_package %{nil}
+
 Summary:        Korora configs for KDE
 Name:           korora-settings-kde
 Version:        0.8
