@@ -3,7 +3,7 @@
 Summary:        Korora configs for KDE
 Name:           korora-settings-kde
 Version:        0.8
-Release:        2%{?dist}
+Release:        3%{?dist}
 
 Group:          System Environment/Base
 License:        GPLv3+
@@ -93,6 +93,9 @@ fi
 #%{_sysconfdir}/kde/shutdown/gpg-agent-shutdown.sh
 
 %changelog
+* Wed Mar 12 2014 Chris Smart <csmart@kororaproject.org> 0.8-3
+- Update mozilla default profile to support adblock-plus 2.5.1
+
 * Thu Oct 24 2013 Chris Smart <csmart@kororaproject.org> 0.8-2
 - Remove gpg-agent from kde profile, now upstream in kde-settings
 
