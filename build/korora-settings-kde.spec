@@ -2,8 +2,8 @@
 
 Summary:        Korora configs for KDE
 Name:           korora-settings-kde
-Version:        0.8
-Release:        4%{?dist}
+Version:        0.10
+Release:        1%{?dist}
 
 Group:          System Environment/Base
 License:        GPLv3+
@@ -31,7 +31,7 @@ mkdir -p %{buildroot}%{_sysconfdir}/skel/.local/share
 mkdir -p %{buildroot}%{_sysconfdir}/skel/.config/autostart
 #mkdir -p %{buildroot}/usr/local/share/applications
 #mkdir -p %{buildroot}%{_sysconfdir}/xdg/menus/applications-merged
-mkdir -p %{buildroot}%{_libdir}/firefox/browser/defaults/profile
+#mkdir -p %{buildroot}%{_libdir}/firefox/browser/defaults/profile
 mkdir -p %{buildroot}%{_sysconfdir}/kde/{env,shutdown}
 
 desktop-file-install --dir=${RPM_BUILD_ROOT}%{_sysconfdir}/skel/.config/autostart/ syndaemon.desktop
@@ -40,7 +40,7 @@ desktop-file-install --dir=${RPM_BUILD_ROOT}%{_sysconfdir}/skel/.config/autostar
 #install -m 0644 %{_builddir}/%{name}-%{version}/applications/* %{buildroot}/usr/local/share/applications/
 #cp -a %{_builddir}/%{name}-%{version}/mimeapps-kde.list %{buildroot}%{_datadir}/applications/
 #install -m 0644 %{_builddir}/%{name}-%{version}/applications-korora.menu %{buildroot}%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
-cp -a %{_builddir}/%{name}-%{version}/prefs-kde.js %{buildroot}%{_libdir}/firefox/browser/defaults/profile/prefs-kde.js
+#cp -a %{_builddir}/%{name}-%{version}/prefs-kde.js %{buildroot}%{_libdir}/firefox/browser/defaults/profile/prefs-kde.js
 
 #fix KDE logon issue
 touch %{buildroot}%{_sysconfdir}/skel/.local/share/user-places.xbel
@@ -63,26 +63,26 @@ rm -rf %{buildroot}
 %post
 cd %{_datadir}/applications/
 ln -sf mimeapps-kde.list mimeapps.list
-cd %{_libdir}/firefox/browser/defaults/profile/
-ln -sf prefs-kde.js prefs.js
+#cd %{_libdir}/firefox/browser/defaults/profile/
+#ln -sf prefs-kde.js prefs.js
 
 #enable GNOME's PackageKit programs in KDE
 #sed -i s/NotShowIn=KDE/#NotShowIn=KDE/ /usr/share/applications/gpk*desktop 2>/dev/null
 
 %postun
 # clean up the link on uninstall of this package (not updates though)
-if [ "$1" == "0" ]
-then
-  cd %{_libdir}/firefox/browser/defaults/profile/
-  unlink prefs.js 2>/dev/null
-  cd -
-fi
+#if [ "$1" == "0" ]
+#then
+#  cd %{_libdir}/firefox/browser/defaults/profile/
+#  unlink prefs.js 2>/dev/null
+#  cd -
+#fi
 
 
 %files 
 %defattr(-,root,root,-)
 #%{_datadir}/applications/mimeapps-kde.list
-%{_libdir}/firefox/browser/defaults/profile/prefs-kde.js
+#%{_libdir}/firefox/browser/defaults/profile/prefs-kde.js
 #%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
 %{_sysconfdir}/skel/.config/autostart/syndaemon.desktop
 %{_sysconfdir}/skel/.local/share/user-places.xbel
@@ -93,6 +93,9 @@ fi
 #%{_sysconfdir}/kde/shutdown/gpg-agent-shutdown.sh
 
 %changelog
+* Sat Dec 20 2014 Chris Smart <csmart@kororaproject.org> 0.10-1
+- Move Firefox profile to generic package.
+
 * Sat May 3 2014 Chris Smart <csmart@kororaproject.org> 0.8-4
 - Update mozilla default profile to support adblock-plus 2.6
 
