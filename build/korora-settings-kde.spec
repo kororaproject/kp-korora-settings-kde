@@ -3,7 +3,7 @@
 Summary:        Korora configs for KDE
 Name:           korora-settings-kde
 Version:        0.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 
 Group:          System Environment/Base
 License:        GPLv3+
@@ -28,13 +28,13 @@ rm -rf %{buildroot}
 #mkdir -p %{buildroot}%{_sysconfdir}/skel/Desktop
 #mkdir -p %{buildroot}%{_sysconfdir}/skel/.kde/share/config
 mkdir -p %{buildroot}%{_sysconfdir}/skel/.local/share
-mkdir -p %{buildroot}%{_sysconfdir}/skel/.config/autostart
+#mkdir -p %{buildroot}%{_sysconfdir}/skel/.config/autostart
 #mkdir -p %{buildroot}/usr/local/share/applications
 #mkdir -p %{buildroot}%{_sysconfdir}/xdg/menus/applications-merged
 #mkdir -p %{buildroot}%{_libdir}/firefox/browser/defaults/profile
-mkdir -p %{buildroot}%{_sysconfdir}/kde/{env,shutdown}
+#mkdir -p %{buildroot}%{_sysconfdir}/kde/{env,shutdown}
 
-desktop-file-install --dir=${RPM_BUILD_ROOT}%{_sysconfdir}/skel/.config/autostart/ syndaemon.desktop
+#desktop-file-install --dir=${RPM_BUILD_ROOT}%{_sysconfdir}/skel/.config/autostart/ syndaemon.desktop
 #install -m 0755 %{_builddir}/%{name}-%{version}/gpg-agent-startup.sh %{buildroot}%{_sysconfdir}/kde/env/gpg-agent-shutdown.sh
 #install -m 0755 %{_builddir}/%{name}-%{version}/gpg-agent-shutdown.sh %{buildroot}%{_sysconfdir}/kde/shutdown/gpg-agent-shutdown.sh
 #install -m 0644 %{_builddir}/%{name}-%{version}/applications/* %{buildroot}/usr/local/share/applications/
@@ -61,8 +61,8 @@ rm -rf %{buildroot}
 %pre
 
 %post
-cd %{_datadir}/applications/
-ln -sf mimeapps-kde.list mimeapps.list
+#cd %{_datadir}/applications/
+#ln -sf mimeapps-kde.list mimeapps.list
 #cd %{_libdir}/firefox/browser/defaults/profile/
 #ln -sf prefs-kde.js prefs.js
 
@@ -84,7 +84,7 @@ ln -sf mimeapps-kde.list mimeapps.list
 #%{_datadir}/applications/mimeapps-kde.list
 #%{_libdir}/firefox/browser/defaults/profile/prefs-kde.js
 #%{_sysconfdir}/xdg/menus/applications-merged/applications-korora-kde.menu
-%{_sysconfdir}/skel/.config/autostart/syndaemon.desktop
+#%{_sysconfdir}/skel/.config/autostart/syndaemon.desktop
 %{_sysconfdir}/skel/.local/share/user-places.xbel
 #%{_sysconfdir}/skel/.kde/share/config/kdenliverc
 #/usr/local/share/applications
@@ -93,6 +93,9 @@ ln -sf mimeapps-kde.list mimeapps.list
 #%{_sysconfdir}/kde/shutdown/gpg-agent-shutdown.sh
 
 %changelog
+* Fri Jan 9 2015 Chris Smart <csmart@kororaproject.org> 0.10-2
+- Fix: touchpad stops working. Removed syndaemon as KDE built-in settings work now.
+
 * Sat Dec 20 2014 Chris Smart <csmart@kororaproject.org> 0.10-1
 - Move Firefox profile to generic package.
 
